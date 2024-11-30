@@ -13,7 +13,8 @@
 namespace beneficii {
     
     template<class _kty, class _ty, class _compare = std::less<_kty>,
-            class _alloc_type = std::allocator<range_map_item<_kty, _ty>>>
+            class _alloc_type = std::allocator<range_map_item<_kty, _ty>>,
+										bool _allow_encaps_matching_sets = false>
     class range_map {
             
             typedef range_map<_kty, _ty, _compare, _alloc_type> _myt;
@@ -1100,9 +1101,13 @@ namespace beneficii {
                         //notice of failure.
                         if(!_comp(_n->_range.get_left(), (*_ins)->_range.get_left()) 
                                 && !_comp((*_ins)->_range.get_right(), _n->_range.get_right())) {
-                            _delete_node(*_ins);
-                            *_ins = _n;
-                            return false;
+                            // We allow matching sets if both encapsulate and _allow_encaps_matching_sets is set; if not, fail
+                            if(!_allow_encaps_matching_sets || !_encaps || !(!_comp((*_ins)->_range.get_left(), _n->_range.get_left())
+                                    && !_comp(_n->_range.get_right(), (*_ins)->_range.get_right()))) {
+                                _delete_node(*_ins);
+                                *_ins = _n;
+                                return false;
+                            }
                         }
                         //with everything ruled out, we know that the range to be inserted is
                         //a sub-range of the existing range; if existing range does not
