@@ -283,19 +283,19 @@ namespace beneficii {
             //returns past-begin reverse_iterator
             //RETURN VALUE = reverse_iterator to past-begin point
             reverse_iterator rend() {
-                return reverse_iterator(nullptr, false);
+                return reverse_iterator(iterator(nullptr, false));
             }
             
             //returns past-begin const_reverse_iterator
             //RETURN VALUE = const_reverse_iterator to past-begin point
             const_reverse_iterator rend() const {
-                return const_reverse_iterator(nullptr, false);
+                return const_reverse_iterator(const_iterator(nullptr, false));
             }
             
             //returns past-begin const_reverse_iterator
             //RETURN VALUE = const_reverse_iterator to past-begin point
             const_reverse_iterator crend() const {
-                return const_reverse_iterator(nullptr, false);
+                return const_reverse_iterator(const_iterator(nullptr, false));
             }
             
             // returns iterator to opposite end point of current iterator
