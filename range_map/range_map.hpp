@@ -1328,7 +1328,7 @@ namespace beneficii {
 }
 
 template<class _kty, class _ty, class _compare, class _alloc_type>
-void swap(range_map<_kty, _ty, _compare, _alloc_type>& A, range_map<_kty, _ty, _compare, _alloc_type>& B) {
+void swap(beneficii::range_map<_kty, _ty, _compare, _alloc_type>& A, beneficii::range_map<_kty, _ty, _compare, _alloc_type>& B) {
     A.swap(B);
 }
 
