@@ -3,7 +3,7 @@
 #ifndef BENEFICII_RANGE_MAP_RM_ITER_HPP
 #define	BENEFICII_RANGE_MAP_RM_ITER_HPP
 
-#include <beneficii/range_map/rm_node.hpp>
+#include "rm_node.hpp"
 
 #include <iterator>
 

@@ -3,7 +3,7 @@
 #ifndef BENEFICII_RANGE_MAP_RM_NODE_HPP
 #define	BENEFICII_RANGE_MAP_RM_NODE_HPP
 
-#include <beneficii/range_map/rm_base.hpp>
+#include "rm_base.hpp"
 
 namespace beneficii {
 

@@ -3,7 +3,7 @@
 #ifndef BENEFICII_RANGE_MAP_RANGE_MAP_HPP
 #define	BENEFICII_RANGE_MAP_RANGE_MAP_HPP
 
-#include <beneficii/range_map/rm_iter.hpp>
+#include "internal/rm_iter.hpp"
 #include <algorithm>
 #include <stack>
 #include <initializer_list>
